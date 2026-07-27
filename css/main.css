@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Use Lora for body text */
+    font-family: 'Lora', serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 1.5s ease;
+    
+    /* Heavy texture */
+    background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+    background-blend-mode: multiply;
+}
+
+/* Burnt edges vignette */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 150px rgba(10, 5, 0, 0.95), inset 0 0 50px rgba(20, 10, 0, 0.8);
+    z-index: 9990; /* High z-index but below cursor */
+    transition: opacity 1.5s ease;
+    opacity: 1;
+}
+
+/* Museum Pillars */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 5vw;
+    min-width: 40px;
+    max-width: 80px;
+    background: linear-gradient(to right, #0a0604 0%, #2a1a11 30%, #110a05 70%, #0a0604 100%);
+    box-shadow: 0 0 30px rgba(0,0,0,0.9), inset 0 0 20px rgba(0,0,0,0.8);
+    z-index: 9980;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+    opacity: 1;
+}
+
+#app-root::before {
+    content: '';
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 5vw;
+    min-width: 40px;
+    max-width: 80px;
+    background: linear-gradient(to left, #0a0604 0%, #2a1a11 30%, #110a05 70%, #0a0604 100%);
+    box-shadow: 0 0 30px rgba(0,0,0,0.9), inset 0 0 20px rgba(0,0,0,0.8);
+    z-index: 9980;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+    opacity: 1;
+}
+
+h1, h2, h3, h4, h5, h6, .gallery-link {
+    /* Use Playfair Display for headings and classic elements */
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+#app-root {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Scrollbar customization - rustic */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #110a05;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--panel-border);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-color);
+}

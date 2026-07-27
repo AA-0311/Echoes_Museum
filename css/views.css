@@ -1,0 +1,166 @@
+/* Entrance Hall */
+.entrance-container {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.entrance-quote {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    opacity: 0; /* JS handles fade in */
+}
+
+.entrance-quote strong {
+    font-weight: 600;
+    color: var(--theme-color);
+}
+
+.museum-map {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.gallery-link {
+    padding: 1.5rem 2.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    cursor: none;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-primary);
+}
+
+.gallery-link:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: var(--theme-color);
+}
+
+/* Galleries General Styles */
+.gallery-container {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gallery-header {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    background: var(--panel-bg);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(-5px);
+}
+
+.gallery-header h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--theme-color);
+}
+
+.gallery-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.artifacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.artifact-card {
+    height: 480px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+}
+
+.artifact-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 35px var(--theme-color);
+}
+
+.artifact-image {
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.artifact-card:hover .artifact-image {
+    transform: scale(1.05);
+}
+
+.artifact-info {
+    height: 40%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(26,17,10,1), rgba(26,17,10,0.8));
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.artifact-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    color: var(--theme-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.artifact-info p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Map Hotspot Styles */
+.map-hotspot.unlocked-region {
+    cursor: none;
+    transition: all 0.3s ease;
+}
+
+.map-hotspot.unlocked-region:hover {
+    transform: translate(-50%, -60%) scale(1.1) !important;
+    z-index: 20;
+}
+
+.map-hotspot.locked-region {
+    opacity: 0.7;
+    filter: grayscale(1);
+}
+

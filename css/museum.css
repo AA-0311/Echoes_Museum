@@ -1,0 +1,664 @@
+/* --- Style Token Registry (Timeless Mediterranean Palette) ---
+   Santorini White: #F4F1EA | Aegean Blue: #1E558C | Terracotta Clay: #C85A32
+   Olive Green: #60703C  | Sandy Beige: #D4B996  | Contrast Accents: #0E243A
+   Matte Charcoal: #363936 | Deep Gold: #D49B2A
+--- */
+
+.museum-wrapper {
+    /* Scope the font and text styling here instead of body */
+    background-color: #F4F1EA;
+    color: #363936;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+[data-theme="museum"] {
+    --bg-color: #F4F1EA; /* Override global background for museum */
+}
+
+/* Hide the old museum pillars and vignette for the modern wing so it spans full width */
+body[data-theme="museum"]::before,
+body[data-theme="museum"]::after,
+body[data-theme="museum"] #app-root::before {
+    opacity: 0;
+}
+
+/* Reset for elements inside museum-wrapper */
+.museum-wrapper *, .museum-wrapper *::before, .museum-wrapper *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Elegant Header Ribbon --- */
+.museum-wrapper .nav-ribbon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background: #0E243A;
+    box-shadow: 0 4px 20px rgba(14, 36, 58, 0.15);
+    z-index: 1000;
+}
+
+.museum-wrapper .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    color: #F4F1EA;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.museum-wrapper .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+}
+
+.museum-wrapper .nav-links a {
+    text-decoration: none;
+    color: #D4B996;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.museum-wrapper .nav-links a:hover, .museum-wrapper .nav-links a.active {
+    color: #F4F1EA;
+}
+
+.museum-wrapper .hero-section {
+    margin-top: 80px;
+    position: relative;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(rgba(14, 36, 58, 0.45), rgba(244, 241, 234, 1)), 
+                url('https://images.unsplash.com/photo-1545987796-2006ba70103e?q=80&w=1920') no-repeat center center/cover;
+}
+
+.museum-wrapper .hero-content {
+    text-align: center;
+    z-index: 10;
+    padding: 0 20px;
+    max-width: 800px;
+    /* Transition styles handled via JS initially inline, here as fallback */
+    transition: transform 0.1s, opacity 0.1s;
+}
+
+.museum-wrapper .hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: #0E243A;
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.museum-wrapper .hero-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #C85A32;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.museum-wrapper .section-heading-container {
+    padding: 100px 60px 50px 60px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.museum-wrapper h2.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0E243A;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.museum-wrapper .section-subtitle-tag {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #C85A32;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* --- About Section --- */
+.museum-wrapper .about-section {
+    background-color: #F4F1EA;
+    padding-bottom: 100px;
+}
+
+.museum-wrapper .about-carousel-viewport {
+    width: 90%;
+    max-width: 1200px;
+    height: 520px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    border: 1px solid #D4B996;
+    box-shadow: 0 20px 40px rgba(14, 36, 58, 0.06);
+    background-color: #0E243A;
+}
+
+.museum-wrapper .about-carousel-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.museum-wrapper .about-carousel-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    scroll-snap-align: start;
+    align-items: center;
+}
+
+.museum-wrapper .slide-img-side {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+.museum-wrapper .slide-1 .slide-img-side { background: linear-gradient(135deg, #1E558C, #0E243A); }
+.museum-wrapper .slide-2 .slide-img-side { background: linear-gradient(135deg, #C85A32, #D49B2A); }
+.museum-wrapper .slide-3 .slide-img-side { background: linear-gradient(135deg, #60703C, #D4B996); }
+.museum-wrapper .slide-4 .slide-img-side { background: linear-gradient(135deg, #363936, #1E558C); }
+
+.museum-wrapper .slide-text-side {
+    width: 50%;
+    height: 100%;
+    background: #F4F1EA;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.museum-wrapper .slide-text-side h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    color: #0E243A;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.museum-wrapper .slide-text-side p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #363936;
+    font-weight: 400;
+}
+
+.museum-wrapper .carousel-indicator-tip {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #C85A32;
+    margin-top: 25px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* --- Exhibits Section --- */
+.museum-wrapper .exhibits-section {
+    background: #ECE8DE; 
+    padding-bottom: 140px;
+    position: relative;
+}
+
+.museum-wrapper .slider-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.museum-wrapper .emotions-panel {
+    display: flex;
+    gap: 30px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 20px 0px;
+}
+
+.museum-wrapper .emotions-panel::-webkit-scrollbar {
+    display: none;
+}
+
+.museum-wrapper .emotion-card {
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: 300px;
+    height: 420px;
+    background: #F4F1EA;
+    border: 1px solid #D4B996;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.museum-wrapper .emotion-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.museum-wrapper .emotion-card p {
+    color: #363936;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 4px;
+}
+
+.museum-wrapper .emotion-card:hover {
+    border-color: #0E243A;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(14, 36, 58, 0.08);
+}
+
+.museum-wrapper .joy { color: #D49B2A; }       
+.museum-wrapper .hope { color: #1E558C; }      
+.museum-wrapper .sorrow { color: #363936; }    
+.museum-wrapper .anger { color: #C85A32; }     
+.museum-wrapper .fear { color: #0E243A; }      
+.museum-wrapper .serenity { color: #60703C; }  
+
+.museum-wrapper .slider-btn {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background: #F4F1EA;
+    color: #0E243A;
+    border: 1px solid #D4B996;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.museum-wrapper .slider-btn:hover {
+    border-color: #0E243A;
+    background: #0E243A;
+    color: #F4F1EA;
+}
+.museum-wrapper .btn-left { left: 2%; }
+.museum-wrapper .btn-right { right: 2%; }
+
+/* --- Visual Gallery Archive --- */
+.museum-wrapper .gallery-section {
+    background: #F4F1EA;
+    padding-bottom: 140px;
+}
+
+.museum-wrapper .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-auto-rows: 280px;
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.museum-wrapper .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #D4B996;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+}
+
+.museum-wrapper .gallery-item:hover {
+    transform: scale(1.02) translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(212, 185, 150, 0.6);
+}
+
+.museum-wrapper .gallery-item.wide { grid-column: span 2; }
+.museum-wrapper .gallery-item.tall { grid-row: span 2; }
+
+.museum-wrapper .g-1 { background: url('../assets/gallery-1.jpg') center/cover; }
+.museum-wrapper .g-2 { background: url('../assets/gallery-5.jpg') center/cover; }
+.museum-wrapper .g-3 { background: url('../assets/gallery-3.png') center/cover; }
+.museum-wrapper .g-4 { background: url('../assets/gallery-4.jpg') center/cover; }
+.museum-wrapper .g-5 { background: url('../assets/gallery-6.png') center/cover; }
+.museum-wrapper .g-6 { background: url('../assets/gallery-2.png') center/cover; }
+
+.museum-wrapper .gallery-label {
+    background: #F4F1EA;
+    color: #0E243A;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 4px solid #C85A32;
+    z-index: 2;
+}
+
+/* --- Interactive Reviews & Interactive Form Space --- */
+.museum-wrapper .reviews-section {
+    background: #ECE8DE;
+    padding-bottom: 140px;
+    position: relative;
+}
+
+.museum-wrapper .review-carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #D4B996;
+    background: #F4F1EA;
+    box-shadow: 0 15px 35px rgba(14, 36, 58, 0.05);
+}
+
+.museum-wrapper .review-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.museum-wrapper .review-card {
+    min-width: 100%;
+    padding: 60px 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.museum-wrapper .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #0E243A;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.museum-wrapper .review-author {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #C85A32;
+    font-weight: 600;
+}
+
+.museum-wrapper .review-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.museum-wrapper .rev-btn {
+    background: transparent;
+    border: 1px solid #D4B996;
+    color: #0E243A;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.museum-wrapper .rev-btn:hover {
+    background: #0E243A;
+    color: #F4F1EA;
+    border-color: #0E243A;
+}
+
+/* --- Elegant Review Submissions Module --- */
+.museum-wrapper .review-form-wrapper {
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+    background: #F4F1EA;
+    border: 1px solid #D4B996;
+    padding: 40px;
+}
+
+.museum-wrapper .review-form-wrapper h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #0E243A;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.museum-wrapper .form-cluster {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.museum-wrapper .input-element {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 1px solid #D4B996;
+    color: #363936;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.museum-wrapper .input-element:focus {
+    border-color: #0E243A;
+}
+
+.museum-wrapper textarea.input-element {
+    height: 120px;
+    resize: none;
+}
+
+.museum-wrapper .submit-review-btn {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #0E243A;
+    color: #F4F1EA;
+    border: none;
+    padding: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.museum-wrapper .submit-review-btn:hover {
+    background: #C85A32;
+}
+
+/* --- Universal Architectural Toast Notification --- */
+.museum-wrapper .custom-toast-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 36, 58, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.museum-wrapper .custom-toast-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.museum-wrapper .toast-box {
+    background: #F4F1EA;
+    border: 1px solid #D4B996;
+    padding: 40px 60px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.museum-wrapper .custom-toast-overlay.active .toast-box {
+    transform: translateY(0);
+}
+
+.museum-wrapper .toast-box h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #0E243A;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.museum-wrapper .toast-box p {
+    font-size: 0.95rem;
+    color: #363936;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.museum-wrapper .toast-close-btn {
+    background: transparent;
+    border: 1px solid #0E243A;
+    padding: 10px 24px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #0E243A;
+    transition: all 0.3s;
+}
+
+.museum-wrapper .toast-close-btn:hover {
+    background: #0E243A;
+    color: #F4F1EA;
+}
+
+/* Responsive */
+@media(max-width: 992px) {
+    .museum-wrapper .about-carousel-viewport { height: 600px; }
+    .museum-wrapper .about-carousel-slide { flex-direction: column; }
+    .museum-wrapper .slide-img-side, .museum-wrapper .slide-text-side { width: 100%; height: 50%; }
+    .museum-wrapper .slide-text-side { padding: 40px; }
+    .museum-wrapper .hero-content h1 { font-size: 4rem; }
+    .museum-wrapper .review-card { padding: 40px 30px; }
+    .museum-wrapper .review-text { font-size: 1.4rem; }
+}
+
+@media(max-width: 768px) {
+    .museum-wrapper .gallery-item.wide { grid-column: span 1; }
+    .museum-wrapper .gallery-item.tall { grid-row: span 1; }
+    .museum-wrapper .nav-ribbon { padding: 20px 30px; flex-direction: column; gap: 15px; position: relative; }
+    .museum-wrapper .hero-section { margin-top: 0; }
+    .museum-wrapper .section-heading-container { padding: 60px 24px 30px 24px; }
+    .museum-wrapper h2.section-title { font-size: 2.5rem; }
+}
+
+/* --- Footer Section --- */
+.museum-wrapper footer {
+    background: #0E243A;
+    color: #F4F1EA;
+    padding: 100px 60px 50px 60px;
+    text-align: left;
+}
+
+.museum-wrapper .footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.museum-wrapper .footer-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #D4B996;
+}
+
+.museum-wrapper .footer-content p {
+    color: #D4B996;
+    margin: 10px 0;
+    font-size: 1rem;
+    opacity: 0.75;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.museum-wrapper .footer-bottom {
+    margin-top: 60px;
+    font-size: 0.8rem;
+    color: #F4F1EA;
+    opacity: 0.3;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(244, 241, 234, 0.1);
+    padding-top: 30px;
+}

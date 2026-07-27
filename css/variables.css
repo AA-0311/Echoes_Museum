@@ -1,0 +1,70 @@
+:root {
+    /* Global Rustic Theme */
+    --bg-color: #1a110a; /* Very dark warm brown */
+    --text-primary: #e8dcc7; /* Parchment cream */
+    --text-secondary: #c2aa84; /* Warm darker tone */
+    
+    /* Current Theme Variables (Set by data-theme) */
+    --theme-color: #d4af37; /* Vintage gold */
+    --theme-glow: rgba(212, 175, 55, 0.15);
+    --theme-accent: #3e2723; /* Dark brown wood */
+    --panel-bg: rgba(46, 29, 21, 0.85); /* Dark wood panel */
+    --panel-border: #6d4c41; /* Lighter wood edge */
+}
+
+/* Theme: Entrance Hall */
+[data-theme="entrance"] {
+    --theme-color: #d4af37;
+    --theme-glow: rgba(212, 175, 55, 0.15);
+    --theme-accent: #3e2723;
+    --panel-bg: rgba(46, 29, 21, 0.9);
+    --panel-border: #8d6e63;
+}
+
+/* Theme: Wonder (Warm Gold) */
+[data-theme="wonder"] {
+    --theme-color: #f5b041;
+    --theme-glow: rgba(245, 176, 65, 0.15);
+    --panel-bg: rgba(62, 39, 35, 0.85);
+    --panel-border: #d35400;
+}
+
+/* Theme: Courage (Aged Crimson/Rust) */
+[data-theme="courage"] {
+    --theme-color: #c0392b;
+    --theme-glow: rgba(192, 57, 43, 0.15);
+    --panel-bg: rgba(50, 20, 20, 0.85);
+    --panel-border: #922b21;
+}
+
+/* Theme: Joy (Faded Vibrant - Terracotta/Ochre) */
+[data-theme="joy"] {
+    --theme-color: #d68910;
+    --theme-glow: rgba(214, 137, 16, 0.15);
+    --panel-bg: rgba(60, 40, 20, 0.85);
+    --panel-border: #b9770e;
+}
+
+/* Theme: Love (Faded Rose/Burgundy) */
+[data-theme="love"] {
+    --theme-color: #cd6155;
+    --theme-glow: rgba(205, 97, 85, 0.15);
+    --panel-bg: rgba(50, 25, 25, 0.85);
+    --panel-border: #a93226;
+}
+
+/* Theme: Resilience (Aged Emerald/Olive) */
+[data-theme="resilience"] {
+    --theme-color: #52be80;
+    --theme-glow: rgba(82, 190, 128, 0.15);
+    --panel-bg: rgba(20, 40, 25, 0.85);
+    --panel-border: #229954;
+}
+
+/* Theme: Hope (Faded Sky Blue/Slate) */
+[data-theme="hope"] {
+    --theme-color: #5dade2;
+    --theme-glow: rgba(93, 173, 226, 0.15);
+    --panel-bg: rgba(20, 30, 45, 0.85);
+    --panel-border: #2e86c1;
+}
