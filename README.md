@@ -60,14 +60,5 @@ Since Echoes is a completely static, client-side application, running it locally
    cd echoes
    ```
 3. **Run the Museum:**
-   You can simply double-click the `index.html` file to open it in your browser! 
+   You can simply double-click the `index.html` file to open it in your browser! or `node server.js` in the root directory
    
-   *(Optional)* For the best experience (and to prevent local file CORS restrictions on some browsers), serve it using a local web server:
-   ```bash
-   # Using Python 3
-   python -m http.server 3000
-   ```
-   Then open `http://localhost:3000` in your browser.
-
-## 📜 License
-This project is open source and available under the [MIT License](LICENSE).
